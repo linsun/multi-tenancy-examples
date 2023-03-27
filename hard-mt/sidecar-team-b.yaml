@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Sidecar
+metadata:
+  name: default
+spec:
+  egress:
+  - hosts:
+    - "recommendation-ns/*"
+    - "purchase-history-ns/*"
+    port:
+      number: 8080
+      protocol: HTTP
+      name: egresshttp
+  - hosts:
+    - "istio-system/*"
