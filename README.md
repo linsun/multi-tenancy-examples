@@ -16,7 +16,7 @@ For team B (owning recommendation-ns & purchase-history-ns), the following resou
 * mt/recommendation-authz.yaml
 * mt/purchase-history-authz.yaml
 
-Create the secret::
+Create the secret:
 
 ```bash
 kubectl create -n istio-system secret tls web-api-cert --key mt/certs/istioinaction.io.key --cert mt/certs/istioinaction.io.crt

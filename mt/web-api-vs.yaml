@@ -7,7 +7,7 @@ spec:
   hosts:
   - "web-api.istioinaction.io"
   gateways:
-  - istio-ingress/web-api-gateway
+  - istio-system/web-api-gateway
   http:
   - route:
     - destination:
