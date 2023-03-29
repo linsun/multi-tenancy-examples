@@ -5,7 +5,7 @@ metadata:
   namespace: web-api-ns
 spec:
   hosts:
-  - "web-api.istioinaction.io"
+  - "istioinaction.io"
   gateways:
   - istio-system/web-api-gateway
   exportTo:

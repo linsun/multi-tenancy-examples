@@ -12,7 +12,7 @@ spec:
       name: https
       protocol: HTTPS
     hosts:
-    - "web-api-ns/web-api.istioinaction.io"    
+    - "web-api-ns/istioinaction.io"    
     tls:
       mode: SIMPLE
-      credentialName: web-api-cert
+      credentialName: istioinaction-cert

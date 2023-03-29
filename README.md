@@ -32,11 +32,11 @@ For team B (owning recommendation-ns & purchase-history-ns), the following resou
 Create the secret:
 
 ```bash
-kubectl create -n istio-system secret tls web-api-cert --key mt/certs/istioinaction.io.key --cert mt/certs/istioinaction.io.crt
+kubectl create -n istio-system secret tls istioinaction-cert --key mt/certs/istioinaction.io.key --cert mt/certs/istioinaction.io.crt
 ```
 
 To access the `web-api` service:
 
 ```bash
-curl --cacert mt/certs/ca/root-ca.crt -H "Host: web-api.istioinaction.io" https://web-api.istioinaction.io --resolve web-api.istioinaction.io:443:$GATEWAY_IP
+curl --cacert mt/certs/ca/root-ca.crt -H "Host: istioinaction.io" https://istioinaction.io --resolve istioinaction.io:443:$GATEWAY_IP
 ```
