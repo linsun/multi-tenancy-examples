@@ -2,6 +2,20 @@
 
 There are web-api, recommendation and purchase-history services.  web-api is owned by team A, and the other two services are owned by team B.
 
+```bash
+kubectl create ns web-api-ns
+kubectl create ns recommendation-ns
+kubectl create ns purchase-history-ns
+kubectl label namespace web-api-ns istio-injection=enabled
+kubectl label namespace recommendation-ns istio-injection=enabled
+kubectl label namespace purchase-history-ns istio-injection=enabled
+kubectl apply -f mt/web-api.yaml
+kubectl apply -f mt/recommendation.yaml
+kubectl apply -f mt/purchase-history-v1.yaml
+kubectl apply -f mt/web-api-vs.yaml
+kubectl apply -f mt/web-api-gw-https.yaml
+```
+
 For team A (owning web-api-ns), the following resources are updated/added to enforce multi-tenancy:
 
 * mt/web-api-vs-exportto.yaml
@@ -10,7 +24,6 @@ For team A (owning web-api-ns), the following resources are updated/added to enf
 
 For team B (owning recommendation-ns & purchase-history-ns), the following resources are updated/added to enforce multi-tenancy:
 
-* mt/recommendation-vs-exportto.yaml
 * mt/purchase-history-service-exportto.yaml
 * mt/sidecar-team-b.yaml
 * mt/recommendation-authz.yaml
